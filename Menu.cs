@@ -21,5 +21,39 @@ namespace RestaurantMenu
             // can use DateTime.Today or DateTime.Now
             LastUpdated = DateTime.Now;
         }
+        // add a menu item to the menu
+        // add a menu item into our list of menu items
+        // instance or static?
+        // input is some menu item object
+        // take that menu item and add it into the Items list
+        public void AddItem(MenuItem item)
+        {
+            // since we are modifying a non-static property of our class,
+            // we need this method to be an instace method
+            Items.Add(item);
+        }
+
+        // print all the descriptions of all of the menu items on our menu
+        // instance or static?
+        // what are our inputs/outputs if any? nope, it just prints stuff
+        // how do we print all the items in a list?
+        public void PrintMenu()
+        {
+            foreach (MenuItem item in Items)
+            {
+                // specifically we want to print the descriptions of each item
+                Console.WriteLine(item.Description);
+            }
+        }
+
+
+
+
+
+        // static method example!!!
+        public static void PrintString()
+        {
+            Console.WriteLine("This method is static!");
+        }
     }
 }
